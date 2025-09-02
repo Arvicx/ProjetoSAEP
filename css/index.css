@@ -172,3 +172,79 @@ footer ul{
 footer ul li{
     list-style: none;
 }
+
+/* Configuração Pop-Up Login */
+
+.loginPopUp{
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    top: 25%;
+    z-index: 100%;
+    width: 35%;
+    height: 40%;
+    background-color: rgb(209, 209, 209);
+    border-radius: 15px;
+}
+
+.loginPopUp form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPopUp form .headerPop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    border-radius: 2px solid #ddd;
+}
+
+.loginPopUp form .headerPop h2{
+    font-weight: 400;
+}
+
+.loginPopUp form .inputsPop{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginPopUp form .inputsPop label{
+    align-self: flex-start;
+    margin-left: 25%;
+}
+
+.loginPopUp form .inputsPop input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 2vh;
+
+}
+
+.loginPopUp form .btnsPop{
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPopUp form .btnsPop button{
+    width: 25%;
+    margin: 0 0.5vw;
+    padding: 15px 0;
+    font-size: calc(0.4rem + 0.4vw);
+    border-radius: 6px;
+    cursor: pointer;
+}
