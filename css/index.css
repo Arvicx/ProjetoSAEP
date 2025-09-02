@@ -26,7 +26,7 @@ header div{
 }
 
 header div h1{
-    font-size: calc(8rem + 0,9vw);
+    font-size: calc(0.8rem + 0.9vw);
     font-family: var(--SpecialFont);
 }
 
@@ -35,7 +35,7 @@ header div button{
     padding: 15px;
     border-radius: 15px;
     font-size: calc(0.4rem + 0.4rem);
-    background: black;
+    background-color: black;
     color: white;
     cursor: pointer;
     transition: 0.3s;
@@ -56,7 +56,7 @@ header nav{
 
 header nav ul li{
     list-style: none;
-    font-size: 0.6rem + 0.5vw;
+    font-size: calc(0.6rem + 0.5vw);
 }
 
 a{
@@ -103,14 +103,72 @@ main{
     justify-content: space-around;
     align-items: center;
     background: #1e1e1e;
-    position: absolute;
+    position: absolute;  
     bottom: 0;
 }
 
-.interac span{
+.container .interac .item span{
     color: white;
 }
 
-.interac image{
+.container .interac .item img{
     width: 24px;
+}
+
+.img1{
+    grid-area: img1;
+}
+
+.img2{
+    grid-area: img2;
+}
+
+.img3{
+    grid-area: img3;
+}
+
+.img4{
+    grid-area: img4;
+}
+
+.img5{
+    grid-area: img5;
+}
+
+.img6{
+    grid-area: img6;
+}
+
+.img7{
+    grid-area: img7;
+}
+
+.img8{
+    grid-area: img8;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5vh;
+    width: 100%;
+    background-color: #111;
+    color: white;
+}
+
+footer h1{
+    font-size: calc(0.8rem + 0.8vw);
+    font-family: var(--SpecialFont);
+}
+
+footer ul{
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul li{
+    list-style: none;
 }
