@@ -14,3 +14,25 @@ items.forEach((img, index) => {
 closeComments.addEventListener("click", () => {
     boxComment.style.display = "none";
 });
+
+// Pegar botão de like e contador 
+
+const likeBtn = document.querySelector(".boxComment .like");
+const likeCount = document.querySelector(".boxComment .like span");
+
+let curtido = false;
+
+likeBtn.addEventListener("click", ()=>{
+    let valor = parseInt(likeCount.textContent);
+
+    if(!curtido){
+        likeCount.textContent = valor + 1;
+        likeBtn.src = "./Icones/coraçãoVermelho.svg";
+        curtido = true;
+    }else{
+        likeCount.textContent = valor - 1;
+        likeBtn.src = "./Icones/coração.svg";
+        curtido = false;
+    }
+
+});
