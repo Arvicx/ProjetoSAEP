@@ -9,10 +9,10 @@ const dados =  [
     {src: "./Imagens/PicoPikes.jpg", likes: 6, comentarios: 2},
 ];
 
-const items = document.querySelector(".item");
-items.forEach((items, index) => {
-    const img = items.querySelectorAll("img");
-    const spans = items.querySelectorAll(".interac span");
+const itensGaleria = document.querySelector(".item");
+itensGaleria.forEach((item, index) => {
+    const img = item.querySelectorAll("img");
+    const spans = item.querySelectorAll(".interac span");
 
     img.src = dados[index].src;
     spans[0].textContent = dados[index].likes;
