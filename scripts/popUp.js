@@ -1,19 +1,46 @@
-const loginBtn = document.getElementById('login');
-const loginPopUp = document.getElementById('loginPop');
-const closePop = document.getElementById('closePop');
+const popUp = document.getElementById('LoginPop');
 
-loginBtn.addEventListener("click", ()=>{
-    loginPopUp.style.display = "flex";
-});
-
-closePop.addEventListener("click", (event)=>{
+document.getElementById('closePop').addEventListener('click',(event)=>{
     event.preventDefault();
-    loginPopUp.style.display = "none";
+    popUp.style.display = "none";
 });
 
-const formLogin = document.getElementById("formLogin");
-formLogin.addEventListener("submit", (event) =>{
+document.getElementById('login').addEventListener('click',(event)=>{
     event.preventDefault();
-    alert("Login Realizado!");
-    loginPopUp.style.display = "none";
-});
+    popUp.style.display = "flex";
+})
+
+document.getElementById('formLogin').addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const usuario = document.getElementById('usuario').value;
+    const password = document.getElementById('password').value;
+
+    const data = {
+        usuario,
+        password
+    }
+
+    const URL = 'https://localhost?8080/api/'
+
+    fetch(URL, {
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+    })
+    then((res)=>{
+        if(!res.ok){
+            throw new Error('Erro na resposta do Servidor' + res.status);
+            return res.json();
+        }
+    })
+    .then((data)=>{
+        console.log(data);
+        localStorage.setItem('userId',data.userId);
+        localStorage.setItem('logado',data.logado);
+
+        if(data.logado == true){
+            popUp.style.display = "none";
+        }
+    })
+})
