@@ -31,8 +31,9 @@ document.getElementById('formLogin').addEventListener('submit',(event)=>{
     then((res)=>{
         if(!res.ok){
             throw new Error('Erro na resposta do Servidor' + res.status);
-            return res.json();
         }
+        return res.json();
+
     })
     .then((data)=>{
         console.log(data);
