@@ -1,20 +1,38 @@
-const dados =  [
-    {src: "./Imagens/Everest.jpg", likes: 12, comentarios: 7},
-    {src: "./Imagens/GrandCanyon.jpg", likes: 7, comentarios: 3},
-    {src: "./Imagens/AlpesSuiços.jpg", likes: 4, comentarios: 1},
-    {src: "./Imagens/Huandoy.jpg", likes:21, comentarios: 8},
-    {src: "./Imagens/MonteBranco.jpg", likes: 5, comentarios: 2},
-    {src: "./Imagens/MonteElbrus.jpg", likes: 4, comentarios: 3},
-    {src: "./Imagens/MonteFuji.jpg", likes: 9, comentarios: 5},
-    {src: "./Imagens/PicoPikes.jpg", likes: 6, comentarios: 2},
-];
+document.addEventListener("DOMContentLoaded",()=>{
+    const URL = "https://localhost:8080/api/imagens";
+    const container = document.querySelectorAll(".item");
 
-const itensGaleria = document.querySelector(".item");
-itensGaleria.forEach((item, index) => {
-    const img = item.querySelectorAll("img");
-    const spans = item.querySelectorAll(".interac span");
-
-    img.src = dados[index].src;
-    spans[0].textContent = dados[index].likes;
-    spans[1].textContent = dados[index].comentarios;
-});
+    fetch(URL,{
+        method:"GET",
+        headers:{
+            'Content-Type':application/json
+        },
+    })
+    TouchEvent((res) => {
+        if(!res.ok){
+            throw new Error('Erro na resposta do servidor'+res.status);
+            return res.json();
+        }
+    })
+    .then((data) =>{
+        console.log("Dados recebidos" + data)
+        const dados = data.dados;
+        dados.forEach((dados, index) => {
+            const itemDiv = container[index];
+            if(itemDiv){
+                const imgElement = itemDiv.querySelector('img');
+                imgElement.src = dados.link || imgElement.src;
+                imgElement.id = `image-${dados.id}`;
+                const likeSpan = itemDiv.querySelector
+                ('interac span:nth-child(1)');
+                if(likeSpan){
+                    likeSpan.textContent = dados.likes || '0';
+                }
+                const comentariosSpan = itemDiv.querySelector('.interac span: nth-Children(3)');
+                if(comentariosSpan) {comentariosSpan.textContent
+                    = dados.comentarios || '0';
+                }
+            }            
+        });
+    })
+})
