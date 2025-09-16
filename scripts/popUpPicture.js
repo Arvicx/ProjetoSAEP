@@ -39,3 +39,77 @@ function buscandoImagem(idImage){
         chat.innerText = dados.comentarios;
     })
 }
+
+function likes(idImage,idUsuario,likeIcon){
+    if(!idImage){
+        return alert ("Estamos com problemas internos, tente novamente mais tarde");
+    }
+    if(!idUsuario){
+        return alert ("Faça login para conseguir interagir com as imagens");
+    }
+    const URL = "http://localhost:8080/api/likes";
+
+    fetch(URL,{
+        method:"POST",
+        headers:{'Content-Type':'application/json'
+        },
+        body:JSON.stringify({idImage,idUsuario})
+    })
+    .then((res) =>{
+        if(!res.ok){
+            throw new Error("Erro na resposta do servidor: " + res.status);
+        }
+        return res.json();
+    })
+    .then((data)=>{
+        const item = likeIcon.closest('item');
+        const valorSpan = item.querySelector('.interac span: first-of-type');
+        const valorAtual = parseInt(valorSpan.innerText) || 0;
+
+        if(data.isLiked){
+            valorSpan.innerText = valorAtual + 1;
+            likeIcon.src = "./Icons/coraçãoVermelho.svg";
+        }else{
+            valorSpan.innerText = valorAtual - 1;
+            likeIcon.src = "./Icons/coração.svg";
+        }
+    })
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const items = document.querySelectorAll('.item');
+    const chatIcons = document.querySelectorAll('.chat');
+    const likeIcon = document.querySelectorAll('.interac img:first-of-type');
+
+    items.addEventListener('click',() =>{
+        const img = item.querySelector('img');
+        if(img){
+            const removeCH = img.id.replace(/^image-/, '');
+            localStorage.setItem('idImage','removeCH');
+            comments.style.display = "flex"
+            
+            const idImage = localStorage.getItem('idImage');
+
+            buscandoImagem(idImagem)
+        }else{
+            console.log("Nenhuma imagem encontrada dentro do item");
+        }
+   });
+});
+
+likeIcon.forEach((likeIcon) =>{
+    likeIcon.addEventListener('click', (event)=>{
+        event.stopPropagation();
+
+        const item = likeIcon.closest('.item');
+        const img = item.querySelector('img');
+
+        if(img){
+            const removeCH = img.id.replace(/^image-/, '');
+            localStorage.setItem('idImage', removeCH);
+            const idImage = localStorage.getItem('idImage');
+            const idUsuario = localStorage.getItem('userId');
+
+        }
+    })
+})
