@@ -111,5 +111,31 @@ likeIcon.forEach((likeIcon) =>{
             const idUsuario = localStorage.getItem('userId');
 
         }
-    })
-})
+    });
+});
+
+document.getElementById('sendComment').addEventListener('click',()=>{
+    const comentarios = document.getElementById('comentario').value;
+    const idImage = localStorage.getItem('idImage');
+    const idUsuario = localStorage.getItem('userId');
+
+    if(comentarios.lenght <= 2){
+        return alert('O comentário deve conter mais de 2 caracteres');
+    }
+    if(!idImage){
+        return alert('Estamos com problemas internos, tente novamente mais tarde');
+    }
+    if(!idUsuario){
+        return alert('Faça login para conseguir interagir com as imagens');
+    }
+
+    const URL = 'http://localhost:8080/api/comentar';
+
+    fetch(URL, {
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({comentarios, idImage, idUsuario})
+    });
+});
