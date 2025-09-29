@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./scripts/loadPage.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Fotografia Gelada</h1>
+            <button id="login">Login</button>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- PopUp login -->
+        <div class="loginPopUp" id="LoginPop">
+            <form action="" id="formLogin">
+                <div class="headerPop">
+                    <h2>Login</h2>
+                </div>
+                <div class="inputsPop">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" name="usuario" id="usuario">
+                    <label for="password">Senha:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="btnsPop">
+                    <button id="closePop">Cancelar</button>
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PopUp Comentario -->
+        <div class="boxComment" id="boxComment">
+            <div class="headerComment">
+                <h2>Titulo</h2>
+                <img src="./icons/x.svg" alt="x" id="closeComments">
+            </div>
+            <div class="imgBox">
+                <img src="" alt="imagem" id="">
+            </div>
+            <div class="basicInfos">
+                <div class="likeBox">
+                    <img src="./icons/coração.svg" alt="like" class="like">
+                    <span>0</span>
+                    <span>Curtidas</span>
+                </div>
+                <div class="chatBox">
+                    <img src="./icons/chat-preto.svg" alt="comment">
+                    <span>0</span>
+                    <span>Comentários</span>
+                </div>
+            </div>
+            <div class="sendComment">
+                <img src="./icons/chat-preto.svg" alt="chat">
+                <input type="text" name="comentario" id="comentario" placeholder="Adicionar comentário...">
+                <button id="sendComment"><img src="./icons/send.svg" alt="send"></button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="item img1">
+                <img src="images/Everest.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img2">
+                <img src="images/MonteFuji.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img3">
+                <img src="images/AlpesSuiços.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img4">
+                <img src="images/GrandCanyon.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img5">
+                <img src="images/MonteBranco.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img6">
+                <img src="images/MonteElbrus.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img7">
+                <img src="./images/PicoPikes.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+            <div class="item img8">
+                <img src="images/Huandoy.jpg" alt="">
+                <div class="interac">
+                    <span>0</span>
+                    <img src="./icons/coração.svg" alt="">
+                    <span>0</span>
+                    <img src="./icons/chat-branco.svg" class="chat" alt="">
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <h1>Fotografia <br> Gelada</h1>
+        <ul>
+            <li><a href="https://x.com/home"><img src="icons/Twitter.svg" alt="Twiter"></a></li>
+            <li><a href="https://instagram.com"><img src="icons/Instagram.svg" alt="instagram"></a></li>
+            <li><a href="https://youtube.com"><img src="icons/youtube.svg" alt="YT"></a></li>
+            <li><a href="https://tiktok.com"><img src="icons/tiktok.svg" alt="TikTok"></a></li>
+        </ul>
+        <span>Copyright - 2024</span>
+    </footer>
+    <script src="./scripts/popUp.js"></script>
+    <script src="./scripts/popUpPicture.js"></script>
+    <script src="./scripts/like.js"></script>
+</body>
+
+</html>
