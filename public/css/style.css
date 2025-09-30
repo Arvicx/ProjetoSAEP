@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --SpecialFont: "Concert One", sans-serif;
+    --DefaultFont: "Roboto", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--DefaultFont);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+header {
+    width: 100vw;
+    height: max-content;
+}
+
+header div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 5vh;
+    border-bottom: 2px solid #ddd;
+
+}
+
+header div h1 {
+    font-size: calc(0.8rem + 0.9vw);
+    font-family: var(--SpecialFont);
+}
+
+header div button {
+    width: 15%;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: calc(0.4rem + 0.4vw);
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header div button:active {
+    scale: 1.05;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+header nav ul li {
+    list-style: none;
+    font-size: calc(0.6rem + 0.5vw);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+.container {
+    width: 70%;
+    padding: 5vh 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Três colunas de mesmo tamanho */
+    grid-template-rows: auto;
+    /* Altura automática baseada no conteúdo */
+    grid-template-areas:
+        "img1 img1 img2"
+        "img3 img4 img2"
+        "img5 img6 img6"
+        "img5 img7 img8";
+    gap: 10px;
+    /* Espaçamento entre as imagens */
+}
+
+.container .item {
+    position: relative;
+    overflow: hidden;
+}
+
+.container .item .interac {
+    width: 120px;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e1e1e;
+    position: absolute;
+    bottom: 0;
+}
+
+.container .item .interac span {
+    color: white;
+}
+
+.container .item .interac img {
+    width: 24px;
+}
+
+.container .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+.img5 {
+    grid-area: img5;
+}
+
+.img6 {
+    grid-area: img6;
+}
+
+.img7 {
+    grid-area: img7;
+}
+
+.img8 {
+    grid-area: img8;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5vh;
+    width: 100%;
+    background-color: #111;
+    color: white;
+}
+
+footer h1 {
+    font-size: calc(0.8rem + 0.8vw);
+    font-family: var(--SpecialFont);
+}
+
+footer ul {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+/* Configuracao POPUP LOGIN */
+.loginPopUp {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 25%;
+    z-index: 100;
+    width: 35%;
+    height: 40%;
+    background-color: rgb(209, 209, 209);
+    border-radius: 15px;
+}
+
+.loginPopUp form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPopUp form .headerPop {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.loginPopUp form .headerPop h2 {
+    font-weight: 400;
+}
+
+.loginPopUp form .inputsPop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    flex-direction: column;
+}
+
+.loginPopUp form .inputsPop label {
+    align-self: flex-start;
+    margin-left: 25%;
+}
+
+.loginPopUp form .inputsPop input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 2vh;
+}
+
+.loginPopUp form .btnsPop {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 25%;
+}
+
+.loginPopUp form .btnsPop button {
+    width: 25%;
+    margin: 0 0.5vw;
+    padding: 15px 0;
+    font-size: calc(0.4rem + 0.4vw);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Popup comentario */
+.boxComment {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    top: 25%;
+    z-index: 100;
+    width: 35%;
+    height: 50%;
+    background-color: rgb(209, 209, 209);
+    border-radius: 15px;
+}
+
+.headerComment {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.headerComment h2 {
+    font-size: calc(0.8rem + 0.8vw);
+    font-weight: 400;
+}
+
+.headerComment img {
+    width: 8%;
+    cursor: pointer;
+}
+
+.boxComment .imgBox {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.boxComment .imgBox img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.basicInfos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 0 5%;
+}
+
+.basicInfos span{
+    font-size: calc(0.5rem + 0.5vw);
+}
+
+.basicInfos .likeBox {
+    display: flex;
+    align-items: center;
+}
+
+
+.basicInfos img {
+    width: 30%;
+}
+
+.basicInfos .likeBox span {
+    margin: 0 5%;
+}
+
+.basicInfos .chatBox {
+    display: flex;
+    align-items: center;
+}
+
+.basicInfos .chatBox span {
+    margin: 0 3%;
+}
+
+.sendComment{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sendComment img{
+    width: 5%;
+}
+
+.sendComment input{
+    width: 80%;
+    height: 100%;
+    padding-left: 2%;
+    border: none;
+    outline: none;
+}
+
+.sendComment button{
+    width: 10%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.sendComment button img{
+    width: 50%;
+}
