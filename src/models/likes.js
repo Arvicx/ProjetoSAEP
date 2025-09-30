@@ -37,7 +37,7 @@ Likes.associate = function (models) {
     });
 };
 
-Likes.sync({ force: false })
+Likes.sync({ force: true })
     .then(() => console.log('Tabela Likes criada ou já existente'))
     .catch((error) => console.error('Erro ao criar a tabela:', error));
 

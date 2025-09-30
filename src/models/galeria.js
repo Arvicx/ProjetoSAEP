@@ -30,7 +30,7 @@ const Galeria = sequelize.define('galeria', {
 });
 
 // Sincronizando a tabela no banco de dados com força falsa
-Galeria.sync({ force: false })
+Galeria.sync({ force: true })
     .then(() => console.log('Tabela Galeria sincronizada com sucesso'))
     .catch(err => console.log('Erro ao sincronizar a tabela Galeria: ', err));
 
