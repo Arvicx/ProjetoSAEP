@@ -1,46 +1,45 @@
-const Sequelize = require('sequelize');
-const Comentarios = require('./comentarios.js');
-const sequelize = require('./db.js'); // importando a instacia do sequelize
+const { DataTypes } = require('sequelize');
+const sequelize = require('./db.js'); // Certificando-se de que o caminho do arquivo de conexão está correto
 
-// definindo o modelo User
-
-const Likes = sequelize.define('Likes',{
- id: {
-    type: sequelize.INTEGER,
-    primarykey: true,
-    autoIcrement: true,
-    allowNull: false,
- },
- idImagem:{
-    type:DataTypes.INTEGER,
-    allowNull: false
- },
- idUsuario:{
-    type:DataTypes.INTEGER,
-    allowNull: false
- }
-},{
-tableName:'Likes',
-timestamps:true,
-
+// Definindo o modelo Likes
+const Likes = sequelize.define('Likes', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+    },
+    idImagem: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    idUsuario: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    }
+}, {
+    tableName: 'Likes', // Define o nome da tabela como 'Likes'
+    timestamps: true, // Garante que o Sequelize crie automaticamente 'createdAt' e 'updatedAt'
 });
 
-Comentarios.associate = function(models){
-    Comentarios.belongsTo(models.Galeria,{
-    foreignKey: 'idImagem',
-    onDelete: 'CARCADE'
+// Definindo os relacionamentos
+Likes.associate = function (models) {
+    // Relacionamento com a tabela Galeria
+    Likes.belongsTo(models.galeria, {
+        foreignKey: 'idImagem',
+        onDelete: 'CASCADE',  // Quando uma imagem for deletada, seus likes também serão removidos
     });
 
-    Comentarios.belongsTo(models.Users,{
-    foreignKey: 'idUsuario',
-    onDelete: 'CASCADE'
+    // Relacionamento com a tabela Users
+    Likes.belongsTo(models.users, {
+        foreignKey: 'idUsuario',
+        onDelete: 'CASCADE',  // Quando um usuário for deletado, seus likes serão removidos
     });
 };
 
-//Sicronizar o modelo(cria a tabela no banco de dados)
+Likes.sync({ force: false })
+    .then(() => console.log('Tabela Likes criada ou já existente'))
+    .catch((error) => console.error('Erro ao criar a tabela:', error));
 
-Likes.sync({force: false})
-.then(() => console.log("Tabela users criada ou ja existe"))
-.catch((error) => console.error('Erro ao cria a tabela:', error));
 
 module.exports = Likes;

@@ -1,17 +1,19 @@
-const { Sequelize } = requestAnimationFrame('sequelize');
-const sequelize = new Sequelize("galeria","root","123456",{
-    host: 'localhost',
-    dialect: 'mysql',
-    logging: false,
+const { Sequelize } = require('sequelize');
+
+// Criando a instância do Sequelize
+const sequelize = new Sequelize("galeria", "root", "123456", {
+  host: 'localhost',
+  dialect: 'mysql',
+  logging: false, // Mostra os logs de conexão
 });
 
+// Testando a conexão com o banco
 sequelize.authenticate()
-.then(()=>{
-    console.log("Conexão com o banco de dados realizado com sucesso");
+  .then(() => {
+    console.log("Conexão com o banco de dados realizada com sucesso");
+  })
+  .catch((error) => {
+    console.error("Erro ao conectar ao banco de dados:", error);
+  });
 
-})
-.catch((error)=>{
-    console.log("Erro ao conectar ao banci de dados:", error)
-});
-
-module.exports = sequelize;
+module.exports = sequelize ;
