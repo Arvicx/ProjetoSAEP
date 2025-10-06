@@ -22,7 +22,7 @@ document.getElementById('formLogin').addEventListener('submit', (event) => {
         password,
     }
 
-    const URL = 'http://localhost:8080/api/login'
+    const URL = 'http://localhost:3000/api/login'
 
     fetch(URL, {
         method: 'POST',

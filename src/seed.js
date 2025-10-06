@@ -7,10 +7,10 @@ const Galeria = require('./models/galeria.js');
 
     await Galeria.bulkCreate(
       [
-        { titulo: 'EVEREST', link: 'https://i.ibb.co/F6K9tSm/Everest.jpg' },
-        { titulo: 'MONTE FUJI', link: 'https://i.ibb.co/LNDhVdy/Monte-Fuji.jpg' },
-        { titulo: 'ALPES SUIÇOS', link: 'https://i.ibb.co/JF1vWv0/Alpes-Sui-os.jpg' },
-        { titulo: 'CANYON', link: 'https://i.ibb.co/4TWtRwn/Grand-Canyon.jpg' },
+        { titulo: 'EVEREST', link: 'https://i.ibb.co/MDP7gsTN/Everest.jpg' },
+        { titulo: 'MONTE FUJI', link: 'https://i.ibb.co/GvCp5M0m/Monte-Fuji.jpg' },
+        { titulo: 'ALPES SUIÇOS', link: 'https://i.ibb.co/KjggPSGL/Alpes-Sui-os.jpg' },
+        { titulo: 'CANYON', link: 'https://i.ibb.co/Wp2Jf4Dz/Grand-Canyon.jpg' },
         { titulo: 'MONTE BRANCO', link: 'https://i.ibb.co/FWmdTB3/Monte-Branco.jpg' },
         { titulo: 'ELBRUS', link: 'https://i.ibb.co/MMV3rWW/Monte-Elbrus.jpg' },
         { titulo: 'PICO-PIKES', link: 'https://i.ibb.co/4p2Jr1V/Pico-Pikes.jpg' },

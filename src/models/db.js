@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 // Criando a instância do Sequelize
-const sequelize = new Sequelize("galeria", "root", "123456", {
+const sequelize = new Sequelize("galeria", "root", "", {
   host: 'localhost',
   dialect: 'mysql',
   logging: false, // Mostra os logs de conexão

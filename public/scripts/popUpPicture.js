@@ -6,7 +6,7 @@ document.getElementById('closeComments').addEventListener('click', () => {
 
 //Manipulando DOM
 function buscandoImagem(idImage) {
-    const URL = 'http://localhost:8080/api/getImage';
+    const URL = 'http://localhost:3000/api/getImage';
 
     fetch(URL, {
         method: 'POST',
@@ -55,7 +55,7 @@ function likes(idImagem, idUsuario, likeIcon) {
         return alert('Faça login para conseguir interagir com as imagens')
     }
 
-    const URL = 'http://localhost:8080/api/likes';
+    const URL = 'http://localhost:3000/api/likes';
 
     fetch(URL, {
         method: 'POST',
@@ -190,7 +190,7 @@ document.getElementById('sendComment').addEventListener('click', () => {
         return alert('Faça login para conseguir interagir com as imagens')
     }
 
-    const URL = 'http://localhost:8080/api/comentar';
+    const URL = 'http://localhost:3000/api/comentar';
 
     fetch(URL, {
         method: 'POST',
@@ -230,7 +230,7 @@ document.getElementById('sendComment').addEventListener('click', () => {
 //like dentro do popup
 document.querySelector('.like').addEventListener('click', () => {
 
-    const URL = 'http://localhost:8080/api/likes';
+    const URL = 'http://localhost:3000/api/likes';
 
     const idImagem = localStorage.getItem('idImage');
     const idUsuario = localStorage.getItem('userId');

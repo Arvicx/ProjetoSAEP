@@ -21,7 +21,7 @@ const User = sequelize.define('users', {
 });
 
 // Sincronizando o modelo (cria a tabela no banco de dados)
-User.sync({ force: true })
+User.sync({ force: false })
     .then(() => console.log('Tabela users criada ou já existente'))
     .catch((error) => console.error('Erro ao criar a tabela:', error));
 

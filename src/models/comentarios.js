@@ -43,7 +43,7 @@ Comentarios.associate = function (models) {
     });
 };
 
-Comentarios.sync({ force: true })
+Comentarios.sync({ force: false })
     .then(() => console.log('Tabela Comentarios criada ou já existente'))
     .catch((error) => console.error('Erro ao criar a tabela:', error));
 
